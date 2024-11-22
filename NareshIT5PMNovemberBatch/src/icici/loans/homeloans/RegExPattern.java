@@ -29,20 +29,65 @@ public class RegExPattern
         String regex = "(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/\\d{2,4}";
 
         boolean b4 = Pattern.matches(regex, date);     
-        System.out.println(b4);	*/
+        System.out.println(b4);	
         
         //Validate a Password weakpass StrongP@ssw0rd
         boolean b5 = Pattern.matches("(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).{8,}","StrongP@ssw0rd");
         System.out.println(b5);
         
-        // "visit our website at https://amazon.in or https://flipkart.com"
+       boolean b6 = Pattern.matches("\\+\\d{1,3}-\\d{3}-\\d{3}-\\d{4}", "+1-123-456-7890");
+       System.out.println(b6);*/
+        
+        
         
         // "Ravi kanth" - RK
+		// "192.168.0.1"
+		
         
         // "This     is a    test for    you"
+		String input = "This   is    a   test.";
+        String regex = "\\s+";
+        String result = input.replaceAll(regex, " ");
+        System.out.println("Cleaned String: " + result);
         
-        // "192.168.0.1"
+        
         
         // "The order numbers are 123, 456, &  789"
+		Pattern pattern1 = Pattern.compile("\\d+");
+        Matcher matcher1 = pattern1.matcher("The order numbers are 123, 456, and 789.");
+        while (matcher1.find())
+        {
+        	System.out.println(matcher1.group());
+        }
+      
+       	
+        // Contact us at support@example.com, sales@example.org, or info@example.net
+        Pattern pattern2 = Pattern.compile("[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+");
+        Matcher matcher2 = pattern2.matcher("Contact us at support@example.com, sales@example.org, or info@example.net");
+        while (matcher2.find())
+        {
+        	System.out.println(matcher2.group());
+        }
+        
+        
+        String text = "apple,banana;cherry|grape";
+        String regx = "[,;|]";
+        System.out.println(text);
+        
+       String[] fruits = text.split(regx);
+       for(String fruit:fruits)
+       {
+    	   System.out.println(fruit);
+       }
+        
+       
+       String text1 = "apple banana cherry grape";
+       String regx1 = "[\\s]";
+       System.out.println(text1);
+       String[] fruits1 = text1.split(regx1);
+       for(String fruit1:fruits1)
+       {
+    	   System.out.println(fruit1);
+       }
 	}
 }

@@ -1,6 +1,7 @@
 package icici.loans.homeloans;
 
 import icici.loans.carloans.A;
+import icici.loans.carloans.B;
 
 public class C extends A
 {
