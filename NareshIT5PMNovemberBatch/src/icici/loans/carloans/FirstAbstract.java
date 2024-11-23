@@ -15,6 +15,9 @@ public abstract class FirstAbstract
 	public static void main(String[] args) 
 	{
 		//FirstAbstract obj = new FirstAbstract();
+		
+		FirstAbstract obj = new ChildClass();
+		obj.m2();
 	}
 
 }

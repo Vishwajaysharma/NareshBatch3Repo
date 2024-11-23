@@ -9,7 +9,7 @@ public class B extends A // IsA Relationship
 	
 	public void m1()
 	{
-		System.out.println("iam m1 overridden from B");
+		System.out.println("iam m1 overridden in B");
 	}
 
 	public static void main(String[] args) 

@@ -12,7 +12,7 @@ public class C extends A
 	
 	public void m1()
 	{
-		System.out.println("iam m1 overridden from C");
+		System.out.println("iam m1 overridden in C");
 	}
 
 	public static void main(String[] args) 

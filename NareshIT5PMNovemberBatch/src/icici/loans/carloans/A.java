@@ -2,6 +2,8 @@ package icici.loans.carloans;
 
 import java.util.Date;
 
+import icici.loans.homeloans.C;
+
 public class A
 {
 	int x =100;  // variable declaration
@@ -10,7 +12,6 @@ public class A
 	
 	public void m1()
 	{
-		x = 200;
 		System.out.println("iam m1 from A" + x);
 	}
 	
@@ -32,10 +33,18 @@ public class A
 
 	public static void main(String[] args) 
 	{
-		A a = new A();
+		/*A a = new A();
 		a.m1();
 		m4();
-		System.out.println(a.y);
+		System.out.println(a.y);*/
+		
+		A obj;
+		
+		obj = new B();
+		obj.m1();
+		
+		obj = new C();
+		obj.m1();
 	}
 
 }
