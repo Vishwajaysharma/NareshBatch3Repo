@@ -3,6 +3,23 @@ package icici.loans.homeloans;
 public class MethodOverloadingDemo 
 {
 
+	
+	public void m1(int x,float f) 
+	{
+		System.out.println(x);
+	}
+	
+	public void m1(float x, int f) 
+	{
+		System.out.println(x);
+	}
+	
+	public void m1(int x,double f) 
+	{
+		System.out.println(x);
+	}
+	
+	
 	/*public void m1(int x) 
 	{
 		System.out.println(x);
