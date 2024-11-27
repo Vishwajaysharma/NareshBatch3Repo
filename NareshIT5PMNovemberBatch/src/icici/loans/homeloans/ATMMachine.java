@@ -16,6 +16,7 @@ public class ATMMachine
 		
 		while(attempts<maxAttempts)
 		{
+			attempts++;
 			System.out.println("Enter your pin : ");
 			int enteredPin = sc.nextInt();
 			if(enteredPin == pin)
@@ -27,7 +28,6 @@ public class ATMMachine
 			{
 				System.out.println("Incorrect PIN, you have entered ," + (maxAttempts-attempts)+" - attempts left");
 			}
-			attempts++;
 		}
 		
 		if(attempts == maxAttempts)
