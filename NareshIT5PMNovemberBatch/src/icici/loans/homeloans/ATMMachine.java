@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class ATMMachine 
 {
-
 	public static void main(String[] args) 
 	{
 		int pin = 1234;
