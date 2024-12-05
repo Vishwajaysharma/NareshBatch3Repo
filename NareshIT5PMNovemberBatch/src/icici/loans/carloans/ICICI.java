@@ -13,11 +13,19 @@ public class ICICI implements Rbi
 		System.out.println("Iam overriden withdrawl in ICICI");
 	}
 	
+	public void ministatement()
+	{
+		System.out.println("Iam overriden ministatement  in ICICI");
+	}
+	
+	
 	public static void main(String[] args) 
 	{
 		ICICI i = new ICICI();
 		i.deposit();
 		i.withdrawl();
+		i.ministatement();
+		Rbi.abc();
 	}
 
 }
