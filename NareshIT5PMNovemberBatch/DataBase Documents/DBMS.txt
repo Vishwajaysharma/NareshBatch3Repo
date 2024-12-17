@@ -1,0 +1,43 @@
+DBMS ToolS
+-----------
+MySql
+SqlServer
+Oracle
+etc....
+
+SQL - Structured Query Language
+DataBase - Tables(structured DB) - Data (Rows & Columns) 
+
+CRUD Operations : Create, Read, Update, Delete
+
+Create DB
+Create Table
+Alter DB
+Alter Table
+Reading Data
+Update Data
+Delete DB
+Delete Table
+Delete Data
+
+SQL Commands :
+---------------
+Data Definition Language (DDL)
+	Create
+	Alter
+	Drop
+	Truncate
+
+Data Manipulation Language (DML)
+	Select
+	Update
+	Insert
+	Delete
+
+Data Control Language (DCL)
+	Grant
+	Revoke
+
+Transaction Control Language (TCL)
+	Commit
+	Rollback
