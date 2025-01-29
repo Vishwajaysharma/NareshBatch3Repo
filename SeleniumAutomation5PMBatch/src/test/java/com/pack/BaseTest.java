@@ -2,6 +2,7 @@ package com.pack;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.time.Duration;
 import java.util.Properties;
 
 import org.openqa.selenium.By;
@@ -10,6 +11,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BaseTest 
 {
@@ -78,23 +81,83 @@ public class BaseTest
 	{
 		WebElement element = null;
 		
-		if(locatorkey.endsWith("_id")) {
+		if(!isElementPresent(locatorkey))
+			System.out.println("Element is not present : " + locatorkey);
+		
+		element = driver.findElement(locator(locatorkey));
+		
+		/*if(locatorkey.endsWith("_id")) {
 			element = driver.findElement(By.id(orprop.getProperty(locatorkey)));
-		}else if (locatorkey.endsWith("name")) {
+		}else if (locatorkey.endsWith("_name")) {
 			element = driver.findElement(By.name(orprop.getProperty(locatorkey)));
-		}else if (locatorkey.endsWith("classname")) {
+		}else if (locatorkey.endsWith("_classname")) {
 			element = driver.findElement(By.className(orprop.getProperty(locatorkey)));
-		}else if (locatorkey.endsWith("xpath")) {
+		}else if (locatorkey.endsWith("_xpath")) {
 			element = driver.findElement(By.xpath(orprop.getProperty(locatorkey)));
-		}else if (locatorkey.endsWith("css")) {
+		}else if (locatorkey.endsWith("_css")) {
 			element = driver.findElement(By.cssSelector(orprop.getProperty(locatorkey)));
-		}else if (locatorkey.endsWith("linktext")) {
+		}else if (locatorkey.endsWith("_linktext")) {
 			element = driver.findElement(By.linkText(orprop.getProperty(locatorkey)));
-		}else if (locatorkey.endsWith("partiallinktext")) {
+		}else if (locatorkey.endsWith("_partiallinktext")) {
 			element = driver.findElement(By.partialLinkText(orprop.getProperty(locatorkey)));
-		}
+		}*/
 		return element;
 	}
+
+	public static boolean isElementPresent(String locatorkey) 
+	{
+		try 
+		{
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator(locatorkey)));
+			
+			/*if(locatorkey.endsWith("_id")) {
+				wait.until(ExpectedConditions.presenceOfElementLocated(By.id(orprop.getProperty(locatorkey))));
+			}else if (locatorkey.endsWith("_name")) {
+				wait.until(ExpectedConditions.presenceOfElementLocated(By.name(orprop.getProperty(locatorkey))));
+			}else if (locatorkey.endsWith("_classname")) {
+				wait.until(ExpectedConditions.presenceOfElementLocated(By.className(orprop.getProperty(locatorkey))));
+			}else if (locatorkey.endsWith("_xpath")) {
+				wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(orprop.getProperty(locatorkey))));
+			}else if (locatorkey.endsWith("_css")) {
+				wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(orprop.getProperty(locatorkey))));
+			}else if (locatorkey.endsWith("_linktext")) {
+				wait.until(ExpectedConditions.presenceOfElementLocated(By.linkText(orprop.getProperty(locatorkey))));
+			}else if (locatorkey.endsWith("_partiallinktext")) {
+				wait.until(ExpectedConditions.presenceOfElementLocated(By.partialLinkText(orprop.getProperty(locatorkey))));
+			}*/
+			return true;
+		} 
+		catch (Exception e) 
+		{
+			return false;
+		}
+	}
+	
+	
+	public static By locator(String locatorkey)
+	{
+		By by = null;
+		
+		if(locatorkey.endsWith("_id")) {
+			by = By.id(orprop.getProperty(locatorkey));
+		}else if (locatorkey.endsWith("_name")) {
+			by = By.name(orprop.getProperty(locatorkey));
+		}else if (locatorkey.endsWith("_classname")) {
+			by = By.className(orprop.getProperty(locatorkey));
+		}else if (locatorkey.endsWith("_xpath")) {
+			by = By.xpath(orprop.getProperty(locatorkey));
+		}else if (locatorkey.endsWith("_css")) {
+			by = By.cssSelector(orprop.getProperty(locatorkey));
+		}else if (locatorkey.endsWith("_linktext")) {
+			by = By.linkText(orprop.getProperty(locatorkey));
+		}else if (locatorkey.endsWith("_partiallinktext")) {
+			by = By.partialLinkText(orprop.getProperty(locatorkey));
+		}
+		
+		return by;
+	}
+	
 
 	public static void typeText(String locatorkey, String text) 
 	{
