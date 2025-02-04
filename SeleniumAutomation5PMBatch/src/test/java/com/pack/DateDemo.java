@@ -1,4 +1,4 @@
-package seleniumBrowser;
+package com.pack;
 
 public class DateDemo 
 {
