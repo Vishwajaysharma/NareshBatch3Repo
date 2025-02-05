@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.time.Duration;
 import java.util.Properties;
 
+import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,6 +14,9 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
 
 public class BaseTest 
 {
@@ -24,6 +28,8 @@ public class BaseTest
 	public static Properties mainprop;
 	public static Properties childprop;
 	public static Properties orprop;
+	public static ExtentReports report;
+	public static ExtentTest test;
 	
 	public static void init() throws Exception
 	{
@@ -40,8 +46,7 @@ public class BaseTest
 		String e = mainprop.getProperty("env");
 		System.out.println(e);
 		
-		
-		
+
 		fis = new FileInputStream(projectPath+"/src/test/resource/"+e+".properties");
 		childprop = new Properties();
 		childprop.load(fis);
@@ -51,6 +56,11 @@ public class BaseTest
 		fis = new FileInputStream(projectPath+"/src/test/resource/or.properties");
 		orprop = new Properties();
 		orprop.load(fis);
+		
+		fis = new FileInputStream(projectPath+"/src/test/resource/log4jconfig.properties");
+		PropertyConfigurator.configure(fis);
+		
+		report = ExtentManager.getInstance();
 	}
 	
 	public static void launch(String browser)
