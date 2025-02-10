@@ -3,20 +3,26 @@ package com.pack;
 import java.io.File;
 import java.io.FileInputStream;
 import java.time.Duration;
+import java.util.Date;
 import java.util.Properties;
 
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
 
 public class BaseTest 
 {
@@ -179,6 +185,36 @@ public class BaseTest
 	{
 		getLocatorType(locatorkey).sendKeys(option);
 		//driver.findElement(By.id(locator)).sendKeys(option);
+	}
+	
+	public static void reportFailure(String FailureMessage,WebElement element ) throws Exception 
+	{
+		test.log(Status.FAIL, FailureMessage);
+		takesScreenshot(element);
+	}
+
+	public static void reportSucess(String PassMessage) 
+	{
+		test.log(Status.PASS, PassMessage);
+	}
+	
+	public static void takesScreenshot(WebElement element) throws Exception
+	{
+		Date dt=new Date();
+		System.out.println(dt);
+		String dateFormat=dt.toString().replace(":", "_").replace(" ", "_")+".png";		
+		
+		drawBorder(driver, element);
+		File scrFile=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		FileHandler.copy(scrFile, new File(System.getProperty("user.dir")+"//failurescreenshots//"+dateFormat));
+		
+		test.log(Status.INFO,"Screenshot --->" +test.addScreenCaptureFromPath(System.getProperty("user.dir")+"//failurescreenshots//"+dateFormat));
+	}
+	
+	public static void drawBorder(WebDriver driver,WebElement element)
+	{
+		JavascriptExecutor js = ((JavascriptExecutor)driver);
+		js.executeScript("arguments[0].style.border='5px solid yellow'",element);
 	}
 
 }
