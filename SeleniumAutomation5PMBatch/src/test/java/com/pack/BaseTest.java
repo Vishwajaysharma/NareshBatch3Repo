@@ -71,9 +71,9 @@ public class BaseTest
 	
 	public static void launch(String browser)
 	{
-		if(p.getProperty(browser).equalsIgnoreCase("chrome")) {
+		if(browser.equalsIgnoreCase("chrome")) {
 			driver = new ChromeDriver(); 
-		}else if (p.getProperty(browser).equals("firefox")) {
+		}else if (browser.equals("firefox")) {
 			driver = new FirefoxDriver();
 		}else {
 			driver = new EdgeDriver();
