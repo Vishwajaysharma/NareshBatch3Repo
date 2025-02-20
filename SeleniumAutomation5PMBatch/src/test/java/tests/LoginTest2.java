@@ -2,13 +2,14 @@ package tests;
 
 import java.lang.reflect.Method;
 
+import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import testNGlistener.MyListener;
 
-
-public class LoginTest 
+//@Listeners(MyListener.class)
+public class LoginTest2 
 {
 	String cName = this.getClass().getSimpleName();
 	
@@ -22,6 +23,7 @@ public class LoginTest
   public void loginwithInvalidUser(Method method) 
   {
 	  System.out.println(cName + " - " + method.getName()+ " - " + Thread.currentThread().getId());
+	  Assert.fail(method.getName() + " got failed");
   }
   
   @Test(priority = 3,groups = {"regression","login","all"})
