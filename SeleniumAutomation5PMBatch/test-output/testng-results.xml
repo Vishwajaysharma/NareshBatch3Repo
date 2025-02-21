@@ -2,7 +2,7 @@
 <testng-results ignored="0" total="5" passed="4" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-02-20T18:35:16 IST" name="Automation Suite" finished-at="2025-02-20T18:35:17 IST" duration-ms="368">
+  <suite started-at="2025-02-21T17:51:31 IST" name="Automation Suite" finished-at="2025-02-21T17:51:32 IST" duration-ms="290">
     <groups>
       <group name="all">
         <method signature="LoginTest2.loginwithEmptyFields(java.lang.reflect.Method)[pri:5, instance:tests.LoginTest2@6d3a388c]" name="loginwithEmptyFields" class="tests.LoginTest2"/>
@@ -33,9 +33,9 @@
         <method signature="LoginTest2.loginwithValidCredientials(java.lang.reflect.Method)[pri:1, instance:tests.LoginTest2@6d3a388c]" name="loginwithValidCredientials" class="tests.LoginTest2"/>
       </group> <!-- login -->
     </groups>
-    <test started-at="2025-02-20T18:35:16 IST" name="Automation Test" finished-at="2025-02-20T18:35:17 IST" duration-ms="368">
+    <test started-at="2025-02-21T17:51:31 IST" name="Automation Test" finished-at="2025-02-21T17:51:32 IST" duration-ms="290">
       <class name="tests.LoginTest2">
-        <test-method signature="loginwithValidCredientials(java.lang.reflect.Method)[pri:1, instance:tests.LoginTest2@6d3a388c]" started-at="2025-02-20T18:35:16 IST" name="loginwithValidCredientials" finished-at="2025-02-20T18:35:16 IST" duration-ms="63" status="PASS">
+        <test-method signature="loginwithValidCredientials(java.lang.reflect.Method)[pri:1, instance:tests.LoginTest2@6d3a388c]" started-at="2025-02-21T17:51:31 IST" name="loginwithValidCredientials" finished-at="2025-02-21T17:51:32 IST" duration-ms="33" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -46,7 +46,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginwithValidCredientials -->
-        <test-method signature="loginwithInvalidUser(java.lang.reflect.Method)[pri:2, instance:tests.LoginTest2@6d3a388c]" started-at="2025-02-20T18:35:16 IST" name="loginwithInvalidUser" finished-at="2025-02-20T18:35:16 IST" duration-ms="28" status="FAIL">
+        <test-method signature="loginwithInvalidUser(java.lang.reflect.Method)[pri:2, instance:tests.LoginTest2@6d3a388c]" started-at="2025-02-21T17:51:32 IST" name="loginwithInvalidUser" finished-at="2025-02-21T17:51:32 IST" duration-ms="23" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -96,7 +96,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginwithInvalidUser -->
-        <test-method signature="loginwithInvalidpassword(java.lang.reflect.Method)[pri:3, instance:tests.LoginTest2@6d3a388c]" started-at="2025-02-20T18:35:16 IST" name="loginwithInvalidpassword" finished-at="2025-02-20T18:35:17 IST" duration-ms="65" status="PASS">
+        <test-method signature="loginwithInvalidpassword(java.lang.reflect.Method)[pri:3, instance:tests.LoginTest2@6d3a388c]" started-at="2025-02-21T17:51:32 IST" name="loginwithInvalidpassword" finished-at="2025-02-21T17:51:32 IST" duration-ms="46" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -107,7 +107,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginwithInvalidpassword -->
-        <test-method signature="loginwithInValidCredientials(java.lang.reflect.Method)[pri:4, instance:tests.LoginTest2@6d3a388c]" started-at="2025-02-20T18:35:17 IST" name="loginwithInValidCredientials" finished-at="2025-02-20T18:35:17 IST" duration-ms="9" status="PASS">
+        <test-method signature="loginwithInValidCredientials(java.lang.reflect.Method)[pri:4, instance:tests.LoginTest2@6d3a388c]" started-at="2025-02-21T17:51:32 IST" name="loginwithInValidCredientials" finished-at="2025-02-21T17:51:32 IST" duration-ms="6" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -118,7 +118,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginwithInValidCredientials -->
-        <test-method signature="loginwithEmptyFields(java.lang.reflect.Method)[pri:5, instance:tests.LoginTest2@6d3a388c]" started-at="2025-02-20T18:35:17 IST" name="loginwithEmptyFields" finished-at="2025-02-20T18:35:17 IST" duration-ms="9" status="PASS">
+        <test-method signature="loginwithEmptyFields(java.lang.reflect.Method)[pri:5, instance:tests.LoginTest2@6d3a388c]" started-at="2025-02-21T17:51:32 IST" name="loginwithEmptyFields" finished-at="2025-02-21T17:51:32 IST" duration-ms="10" status="PASS">
           <params>
             <param index="0">
               <value>

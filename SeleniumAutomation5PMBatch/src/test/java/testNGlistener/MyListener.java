@@ -19,11 +19,7 @@ public class MyListener implements ITestListener
 		System.out.println(testName + " has Passed");
 	}
 
-	@Override
-	public void onTestFailedWithTimeout(ITestResult result) {
-		String testName = result.getMethod().getMethodName();
-		System.out.println(testName + " has Failed with Timeout");
-	}
+	
 
 	@Override
 	public void onTestFailure(ITestResult result) {
@@ -45,6 +41,12 @@ public class MyListener implements ITestListener
 	@Override
 	public void onFinish(ITestContext context) {
 		System.out.println(context.getName() + " Finished");
+	}
+
+	@Override
+	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
