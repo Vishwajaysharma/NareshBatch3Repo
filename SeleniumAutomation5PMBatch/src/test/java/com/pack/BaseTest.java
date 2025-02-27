@@ -84,8 +84,8 @@ public class BaseTest
 	
 	public static void navigateUrl(String url)
 	{
-		//driver.navigate().to(childprop.getProperty(url));
-		driver.navigate().to(url);
+		driver.navigate().to(childprop.getProperty(url));
+		//driver.navigate().to(url);
 	}
 	
 	public static void clickElement(String locatorkey) 
