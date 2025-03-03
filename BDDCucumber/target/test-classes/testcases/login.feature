@@ -1,11 +1,16 @@
 Feature: User Login
 
-Scenario: successful login with valid credientials
+Scenario Outline: successful login with valid credientials
 	Given user navigates to login page
-	When user enters valid email "ravilella@gmail.com"
-	And user enters valid password "password"
+	When user enters valid email "<username>"
+	And user enters valid password "<password>"
 	And user clicks on login button
 	Then The user should be redirected to the dashboard
+	Examples:
+	|username	|password|
+	|user1		|pass1	 |
+	|user2		|pass2	 |
+	|user3		|pass3	 |
 	
 Scenario: login attempt with invalid credientials
 	Given user navigates to login page
