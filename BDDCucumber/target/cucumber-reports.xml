@@ -1,43 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="1.018" tests="4" skipped="0" failures="4" errors="0">
-<testcase classname="User Login" name="successful login with valid credientials" time="0.126">
-<failure/>
+<testsuite name="Cucumber" time="1.047" tests="3" skipped="0" failures="0" errors="0">
+<testcase classname="User Registration" name="Register with mandatory fields" time="0.083">
 <system-out><![CDATA[
-Given user navigates to login page..........................................undefined
-When user enters valid email "ravilella@gmail.com"..........................skipped
-And user enters valid password "password"...................................skipped
-And user clicks on login button.............................................skipped
-Then The user should be redirected to the dashboard.........................skipped
+Given user navigates to registration account page...........................passed
+When user enters first name "ravikanth" into  the first name field..........passed
+And user enters last name "lella" into the last name field..................passed
+And user enters email address "ravilella@gmail.com" into email field........passed
+And user enters password "1234" into password field.........................passed
+And user enters confirm password "1234" into confirm password field.........passed
+And user enters telephone number "1234567890" into telephone field..........passed
+And user selects privacy policy field.......................................passed
+And user clicks on continue button..........................................passed
+Then Account should get successfully created................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="User Login" name="login attempt with invalid credientials" time="0.019">
-<failure/>
+<testcase classname="User Registration" name="Register with all fields" time="0.044">
 <system-out><![CDATA[
-Given user navigates to login page..........................................undefined
-When user enters invalid email "ravilella@gmail.com"........................skipped
-And user enters invalid password "password".................................skipped
-And user clicks on login button.............................................skipped
-Then An error message invalid user or password should be displayed..........skipped
+Given user navigates to registration account page...........................passed
+When user enters first name "ravikanth" into  the first name field..........passed
+And user enters last name "lella" into the last name field..................passed
+And user enters email address "ravilella@gmail.com" into email field........passed
+And user enters password "1234" into password field.........................passed
+And user enters confirm password "1234" into confirm password field.........passed
+And user enters telephone number "1234567890" into telephone field..........passed
+And user selects yes for newsletter.........................................passed
+And user selects privacy policy field.......................................passed
+And user clicks on continue button..........................................passed
+Then Account should get successfully created................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="User Login" name="login with invalid email and valid password" time="0.013">
-<failure/>
+<testcase classname="User Registration" name="Register without providing fields" time="0.008">
 <system-out><![CDATA[
-Given user navigates to login page..........................................undefined
-When user enters invalid email "ravilella@gmail.com"........................skipped
-And user enters valid password "password"...................................skipped
-And user clicks on login button.............................................skipped
-Then user should get proper warning message.................................skipped
-]]></system-out>
-</testcase>
-<testcase classname="User Login" name="login with valid email and invalid password" time="0.075">
-<failure/>
-<system-out><![CDATA[
-Given user navigates to login page..........................................undefined
-When user enters valid email "ravilella@gmail.com"..........................skipped
-And user enters invalid password "password".................................skipped
-And user clicks on login button.............................................skipped
-Then user should get proper warning message.................................skipped
+Given user navigates to registration account page...........................passed
+When user donot enter details into any fields...............................passed
+And user clicks on continue button..........................................passed
+Then warning message should be displayed for all the mandatody fields.......passed
 ]]></system-out>
 </testcase>
 </testsuite>

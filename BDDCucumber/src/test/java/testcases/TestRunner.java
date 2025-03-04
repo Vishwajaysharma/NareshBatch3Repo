@@ -6,13 +6,16 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="src/test/java/testcases/login.feature",
-				  //glue={"Login"},
+@CucumberOptions( tags = "not @login",
+				  features="src/test/java/testcases/",
+				  //glue="Login",
 				  plugin = {"pretty",
 							  "html:target/cucumber-reports.html",
 							  "json:target/cucumber-reports.json",
 							  "junit:target/cucumber-reports.xml"
-						   }
+						   },
+				  dryRun = true
+				  
 				)
 public class TestRunner 
 {

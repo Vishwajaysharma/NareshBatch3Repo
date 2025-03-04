@@ -1,5 +1,7 @@
+@all
 Feature: User Registration
 
+@smokeTest @regression @register @mandatory-fields
 Scenario: Register with mandatory fields
 	Given user navigates to registration account page
 	When user enters first name "ravikanth" into  the first name field
@@ -12,7 +14,7 @@ Scenario: Register with mandatory fields
 	And user clicks on continue button
 	Then Account should get successfully created
 	
-
+@smokeTest  @register @all-fields
 Scenario: Register with all fields
 	Given user navigates to registration account page
 	When user enters first name "ravikanth" into  the first name field
@@ -26,6 +28,7 @@ Scenario: Register with all fields
 	And user clicks on continue button
 	Then Account should get successfully created
 
+@regression @register @without-fields
 Scenario: Register without providing fields
 	Given user navigates to registration account page
 	When user donot enter details into any fields
