@@ -2,6 +2,9 @@ package hooks;
 
 import java.util.Properties;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+
 import browserfactory.DriverFactory;
 import io.cucumber.java.*;
 import utils.ConfigReader;
@@ -28,16 +31,22 @@ public class LoginHooks
 	}
 	
 	
-	@After
+	@After(order=1)
 	public void quitBrowser()
 	{
-		
+		DriverFactory.getDriver().quit();
 	}
 	
-	@After
-	public void tearDown()
+	@After(order=2)
+	public void tearDown(Scenario scenario)
 	{
-		
+		if(scenario.isFailed())
+		{
+			//take the screenshot
+			String screenshotName = scenario.getName().replace(" ", "_");
+			byte[] sourcePath = ((TakesScreenshot)DriverFactory.getDriver()).getScreenshotAs(OutputType.BYTES);
+			scenario.attach(sourcePath, "image/png", screenshotName);
+		}
 	}
 
 }
