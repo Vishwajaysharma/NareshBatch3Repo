@@ -1,0 +1,62 @@
+what are the Key Aspects of web services Testing:
+-------------------------------------------------
+ 1) Functional Testing
+ 2) Performance Testing
+ 3) security Testing
+ 4) Error Handling Testing
+
+
+web services Testing Process:
+-----------------------------
+ 1) Understand the API Requirments
+ 2) setup the Test Environment
+ 3) Create Test cases
+ 4) send API Requests
+ 5) Validate Respones
+ 6) Perform security & Performance Testing
+ 7) Generate Reports
+
+common tools for web services Testing:
+--------------------------------------
+ 1) Postman
+ 2) soupUI
+ 3) JMeter
+ 4) RestAssured
+ 5) Katlon studio
+
+Example of web services Testing with Postman:
+----------------------------------------------
+step 1: open postman
+step 2: Enter the API URL (https://api.example.com/users)
+step 3: select the HTTP method (GET,POst,PUT, DELETE)
+step 4: Add the headers and authentication if required
+step 5: click on send
+step 6: Validate the response code and reponse body
+
+Expected reponse : json file
+ {
+    "status" : "success",
+    "userId" : "123",
+    "name"   : "ravi kanth"
+ }
+
+
+
+Detailed comparison on Postman  & RestAssured :
+-----------------------------------------------
+
+Postman :
+---------
+1) GUI-Based API Testing Tool
+2) purpose - Used for manual API Testing & exploratory Testing
+3) Best for beginers without coding knowledge
+4) Environment - standalone applications (or) web applications
+5) User-friendly interface with point-and-click actions
+
+RestAssured : 
+-------------
+1) Java-Based library for automation
+2) purpose - Used for automation API Testing in java projects
+3) Testers with java programming knowledge
+4) Environment - Integrated with java IDE's like Eclipse or Intellij etc..
+5) Requires coding & scripting knowledge
